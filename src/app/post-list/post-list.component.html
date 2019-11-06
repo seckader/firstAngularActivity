@@ -1,0 +1,18 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': post.getLoveIts() > 0,
+                'list-group-item-danger': post.getLoveIts() < 0}">
+
+  <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
+    <h4>{{ post.getTitle() }}</h4>
+    <h5 style="color: gray">{{ post.getCreatedAt() | date | date:'short' }}</h5>
+  </div>
+
+  <p>
+    {{ post.getContent() }}
+  </p>
+
+  <div class="btn-toolbar justify-content-between" role="toolbar">
+    <button class="btn btn-success" (click)="onLove()">Love it !!</button>
+    <button class="btn btn-danger" (click)="onDontLove()">Don't love it !!</button>
+  </div>
+</li>
